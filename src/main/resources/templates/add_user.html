@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>AddUser</title>
+</head>
+<body style=" background-color:#F0FFFF">
+<h2>
+    <center><font color="red">Пожалуйста, заполните данные.</font></center>
+</h2>
+
+<div class="container mt-5 mb-10">
+
+    <form action="#" th:action="@{/add_user}" th:object="${idd}" method="post">
+
+        Name of user <input type="text" id="name" th:field="*{name}" placeholder="Введите имя"
+                            class="form-control" required minlength="2" maxlength="30">
+        </p>
+        Second name of user <input type="text" id="Secondname" th:field="*{secondName}"
+                                   placeholder="Введите вашу фамилию"
+                                   class="form-control" required minlength="4" maxlength="30">
+        </p>
+        Number<input type="text" id="возраст" th:field="*{age}" placeholder="Введите класс"
+                  class="form-control" required minlength="1" maxlength="2">
+        </p>
+
+        <p>
+            <button type="submit" class="btn btn-success">Save user</button>
+        </p>
+        <br>
+    </form>
+</div>
+
+<p><img src="https://business-magazine.online/source/KUZBASS/BM_2019_05/08_1.jpg" alt="Школьники"></p>
+
+
+</body>
+</html>

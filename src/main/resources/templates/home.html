@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>Home</title>
+</head>
+<body style=" background-color:#F0FFFF">
+<h1>
+    <font color="#00008B">Здравствуйте, Уважаемые родители. Кто хочет записать ребенка на кружок по рисованию,
+        пожалуйста нажмите кнопку "Записаться". Далее заполните поля с информацией.</font></h1>
+
+<a href="/add_user"><h1 > <font color="red">Записаться </font></h1></a>
+<table class="table table-dark table-hover">
+    <thead>
+    <tr>
+        <th scope="col">Имя ребенка</th>
+        <th scope="col">Фамилия</th>
+        <th scope="col">Класс</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.secondName}"></td>
+        <td th:text="${user.age}"></td>
+        <td>
+            <a th:href="@{user-edit/{id}(id=${user.id})}">Изменить</a>
+        </td>
+        <td>
+            <a th:href="@{user-delete/{id}(id=${user.id})}">Удалить</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<form action="/search">
+    <input name="searchParam" type="search" placeholder="Введите текст" aria-label="Search">
+    <button type="submit">Search</button>
+</form>
+
+<p><img src="https://st.depositphotos.com/1015337/4499/i/600/depositphotos_44994683-stock-photo-paints-and-brushes.jpg" alt="Краски и кисти"></p>
+
+</body>
+</html>
+
+
+</body>
+</html>
